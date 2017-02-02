@@ -1,0 +1,27 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="increment">increment</button>
+    <p>Counter: {{ counter }}</p>
+    <p>Clicks: {{ clicks }}</p>
+</div>
+
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            clicks: 0
+        },
+        methods: {
+            increment() {
+                this.clicks++;
+            }
+        },
+        computed: {
+            counter() {
+                return this.clicks * 2;
+            }
+        }
+    });
+</script>
