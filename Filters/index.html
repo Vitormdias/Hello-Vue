@@ -1,0 +1,25 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p >{{ title | uppercase | lowercase}}</p>
+</div>
+
+<script type="text/javascript">
+    //Global filter
+    Vue.filter('uppercase' , function (value) {
+        return value.toUpperCase();
+    });
+
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Hello World!'
+        },
+        filters: {
+            //Local filter
+            lowercase(value) {
+                return value.toLowerCase();
+            }
+        }
+    });
+</script>
